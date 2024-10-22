@@ -1,17 +1,12 @@
+:root  {
+	--constant8: 8;
+}
 html {
-	justify-content: center;
-	align-items: center;
 	background-image: url('../img/triangles.png');
 	background-repeat: repeat;
 }
 
-
-main {
-	z-index: 1;
-}
-
 body {
-
 	color: var(--foreground-color);
 	font-family: var(--main-font);
 	font-size: 1.25rem;
@@ -29,27 +24,15 @@ a:visited {
 h1,
 h2,
 h3,
+img,
 p,
 ul {
 	margin: 0;
 }
 
-h1,
-h2,
-h3,
-details {
-	margin-bottom: 0.55rem;
-}
-
-p,
-img {
-	margin-bottom: 1.25rem;
-}
-
-p,
-table {
-	margin-left: 1rem;
-	margin-right: 1rem;
+#logo {
+	content: url('/assets/img/logo_judgementdayevents.svg');
+	max-height: 100%;
 }
 
 .align_items_center {
@@ -61,87 +44,91 @@ table {
 }
 
 .bombs {
-	position: absolute;
-	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow: hidden;	
 }
 
-img {
-	max-height: 100%;	
+.bomb {
+	position: absolute;
+	content: url('/assets/img/bomb.svg');
+	max-height: 100%;
+	height: 200px;
+	z-index: -1;
+	animation: animate 25s linear infinite;
+	top: -225px;
+	
+	height: 188px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+
 }
 
 
 
 .bombs li {
-	position: absolute;
 	display: block;
-	list-style: none;
-	height: 200px;
-	width: auto;
-	animation: animate 25s linear infinite;
-	top: -225px;
-
+	list-style: none;	
+	
 }
 
-.bombs li:nth-child(1) {
-	left: 10%;
+.bombs li .bomb {
+	left: 69;
+	height: 81px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.bombs li:nth-child(1) .bomb{
+	left: 255px;
 	height: 188px;
 	animation-delay: 0s;
 	animation-duration: 15s;
 }
 
 
-.bombs li:nth-child(2) {
-	left: 25%;
+.bombs li:nth-child(2) .bomb{
+	left: 555px;
 	height: 125px;
 	animation-delay: 2s;
 	animation-duration: 12s;
 }
 
-.bombs li:nth-child(3) {
-	left: 31%;
+.bombs li:nth-child(3) .bomb{
+	left: 813px;
 	height: 225px;
 	animation-delay: 24s;
 	animation-duration: 18s;
 }
 
-.bombs li:nth-child(4) {
-	left: 55%;
+.bombs li:nth-child(4)  .bomb{
+	left: 1113px;
 	height: 113px;
 	animation-delay: 0s;
 	animation-duration: 25s;
 }
 
-.bombs li:nth-child(5) {
-	left: 65%;
+.bombs li:nth-child(5) .bomb{
+	left: 1313px;
 	height: 55px;
 	animation-delay: 13s;
 	animation-duration: 8s;
 }
 
-.bombs li:nth-child(6) {
-	left: 75%;
+.bombs li:nth-child(6) .bomb{
+	left: 1555px;
 	height: 113px;
 	animation-delay: 15s;
 	animation-duration: 31s;
 }
 
-.bombs li:nth-child(7) {
-	left: 75%;
+.bombs li:nth-child(7) .bomb{
+	left: 1855%;
 	height: 155px;
 	animation-delay: 7s;
 	animation-duration: 18s;
 }
 
-.bombs li:nth-child(8) {
-	left: 88%;
-	height: 125px;
-	animation-delay: 15s;
-	animation-duration: 45s;
-}
 
 
 .flex {
@@ -186,23 +173,25 @@ img {
 	max-width: max-content;
 }
 
-.padding_1rem {
-	padding: 1rem;
+.min_height_100vh {
+	min-height: 100vh;
 }
 
-.position_absolute {
-	position: absolute;
+.padding_1rem {
+	padding: 1rem;
 }
 
 .top_left_50 {
 	top: 50%;
 	left: 50%;
 }
-
+.zindex3 {
+	z-index: 3;
+}
 
 @keyframes animate {
 	0% {
-		top: -225px;
+		top: -225px;		
 	}
 
 	50% {
